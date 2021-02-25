@@ -83,48 +83,10 @@ namespace cv3
         public static bool operator ==(Matrix a, Matrix b)
         {
             return a.matx.Equals(b.matx);
-            /*try
-            {
-               for (int i = 0; i < a.matx.GetLength(0); i++)
-                {
-                    for (int j = 0; j < a.matx.GetLength(1); j++)
-                    {
-                        if(a.matx[i,j] != b.matx[i,j])
-                        {
-                            return false;
-                        }
-                    }
-                }
-              
-            }
-            catch
-            {
-                return false;
-            }
-            return true;*/
         }
         public static bool operator !=(Matrix a, Matrix b)
         {
-            return !(a.matx.Equals(b.matx));
-            /*try
-            {
-                for (int i = 0; i < a.matx.GetLength(0); i++)
-                {
-                    for (int j = 0; j < a.matx.GetLength(1); j++)
-                    {
-                        if (a.matx[i, j] == b.matx[i, j])
-                        {
-                            return false;
-                        }
-                    }
-                }
-
-            }
-            catch
-            {
-                return false;
-            }
-            return true;*/
+            return !(a.matx.Equals(b.matx));            
         }
         public static Matrix operator -(Matrix a)
         {

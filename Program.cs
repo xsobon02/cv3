@@ -42,6 +42,9 @@ namespace cv3
             Console.WriteLine("");
             Console.WriteLine("Determinant:");
             Console.WriteLine(m1.Determinant());
+            Console.WriteLine("");
+            Console.WriteLine("Unary -:");
+            Console.WriteLine(-m1);
             Console.ReadLine();
         }
     }

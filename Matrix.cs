@@ -115,18 +115,18 @@ namespace cv3
                 }
                 else if (matx.GetLength(0) == matx.GetLength(1) && matx.GetLength(1) == 3)
                 {
-                    var determinant = matx[0, 0] * (matx[1, 1] * matx[2, 2] - matx[1, 2] * matx[2, 1]) -
-                                      matx[0, 1] * (matx[1, 0] * matx[2, 2] - matx[1, 2] * matx[2, 0]) +
-                                      matx[0, 2] * (matx[1, 0] * matx[2, 1] - matx[1, 1] * matx[2, 0]);
+                    return matx[0, 0] * (matx[1, 1] * matx[2, 2] - matx[1, 2] * matx[2, 1]) -
+                           matx[0, 1] * (matx[1, 0] * matx[2, 2] - matx[1, 2] * matx[2, 0]) +
+                           matx[0, 2] * (matx[1, 0] * matx[2, 1] - matx[1, 1] * matx[2, 0]);
 
-                    return determinant;
+                    
                 }
             }
             catch
             {
                 throw new Exception("Matrix dimensions aren't acceptable.");
             }
-            return 0;
+            throw new Exception("Matrix dimensions aren't acceptable.");
         }
         public override string ToString()
         {
@@ -136,7 +136,7 @@ namespace cv3
             {
                 for (int j = 0; j < matx.GetLength(1); j++)
                 {
-                    if (j != matx.GetLength(0) - 1) output += $"{matx[i, j]},";
+                    output += $"{matx[i, j]},";
                 }
                 output += "\n";
             }
